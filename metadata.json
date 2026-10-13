@@ -1,0 +1,6 @@
+{
+  "name": "HealthCare - Healthcare TPA & Benefits Administration",
+  "description": "Intelligent solutions for modern healthcare and corporate benefits administration, network hospital search, cashless claims, and global coverage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
