@@ -12,10 +12,24 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+      // Gracefully handle benign HMR websocket warnings in sandbox iframe environment
+      window.addEventListener('error', function(e) {
+        if (e && e.message && e.message.includes('WebSocket')) {
+          e.preventDefault && e.preventDefault();
+          e.stopImmediatePropagation && e.stopImmediatePropagation();
+        }
+      }, true);
+      window.addEventListener('unhandledrejection', function(e) {
+        if (e && e.reason && String(e.reason).includes('WebSocket')) {
+          e.preventDefault && e.preventDefault();
+        }
+      });
+    </script>
   </head>
   <body class="bg-[#F8FAFC] text-[#0B2545] font-sans antialiased selection:bg-[#134074] selection:text-white">
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/FE/src/main.tsx"></script>
   </body>
 </html>
 
